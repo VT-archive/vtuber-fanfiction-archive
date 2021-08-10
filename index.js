@@ -41,7 +41,7 @@ document.getElementById("search").addEventListener("click", function(){
   let given = document.getElementById('tag').value.toLowerCase();
   let giver = [];
   if(given != ""){
-    puller.forEach(value =>{
+    active.forEach(value =>{
       let worker = value.tags;
       let stat =0;
       worker.forEach(value =>{
