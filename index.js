@@ -10,10 +10,12 @@ function write1(given){
   });
 
   document.getElementById("listing").innerHTML = writer;
+  document.getElementById("counter").innerHTML = given.length;
 };
 
 //fetches json file, hands data to var puller, and writes listing to screen 
 //this thing is a massive pain in the rear to work with, good luck to any who try
+
 fetch("./library.json")
   .then(
     function(response) {
@@ -21,6 +23,7 @@ fetch("./library.json")
           puller = data;
           write1(puller);
           active = puller;
+        console.log("1")
       });
     }
   );
