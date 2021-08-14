@@ -4,7 +4,8 @@
         .button{
             background-color: gray; 
             border-color: black; 
-            border-width: 3px;
+            border-width: 1px;
+            border-radius: 15px;
         }
     </style>
 
@@ -16,10 +17,10 @@
         <h1 style="text-align: center">Placeholder</h1>
 
         <div style="display: inline;">
-            <p id= "counter"></p>
+            <!-- <p id= "counter"></p> -->
             <center>
             <button id = "flip" class="button" type="button">Flip</button>
-            <input type="text" id="tag" placeholder= "tags" onfocus="this.value=''" size= 30>
+            <input type="text" id="tag" placeholder= "tags" onfocus="this.value=''" size= 30 name="tag">
             <button id = "search" class="button">Search</button>
             <button id = "reset" class="button">Reset</button>
             </center>
@@ -28,7 +29,7 @@
         <p  id = "listing" style="font-size: 20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;"></p>
 
     </body>
-
+    
     <script src = "index.js"></script>
     
 </html5>

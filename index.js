@@ -10,12 +10,15 @@ function write1(given){
   });
 
   document.getElementById("listing").innerHTML = writer;
-  document.getElementById("counter").innerHTML = given.length;
+  document.getElementsByName("tag")[0].placeholder= given.length + " stories matching search";
+  
+  //vistigiles in case the current method stops working for whatever reason 
+  // document.getElementById("counter").innerHTML = given.length;
+  // document.getElementsByName("tag")[0].value="";
 };
 
 //fetches json file, hands data to var puller, and writes listing to screen 
 //this thing is a massive pain in the rear to work with, good luck to any who try
-
 fetch("./library.json")
   .then(
     function(response) {
@@ -23,7 +26,6 @@ fetch("./library.json")
           puller = data;
           write1(puller);
           active = puller;
-        console.log("1")
       });
     }
   );
