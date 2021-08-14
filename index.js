@@ -11,10 +11,7 @@ function write1(given){
 
   document.getElementById("listing").innerHTML = writer;
   document.getElementsByName("tag")[0].placeholder= given.length + " stories matching search";
-  
-  //vistigiles in case the current method stops working for whatever reason 
-  // document.getElementById("counter").innerHTML = given.length;
-  // document.getElementsByName("tag")[0].value="";
+    document.getElementsByName("tag")[0].value="";
 };
 
 //fetches json file, hands data to var puller, and writes listing to screen 
