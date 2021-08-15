@@ -10,7 +10,7 @@ function write1(given){
   });
 
   document.getElementById("listing").innerHTML = writer;
-  document.getElementsByName("tag")[0].placeholder= given.length + " stories matching search";
+  document.getElementsByName("tag")[0].placeholder= given.length + " entries matching search";
     document.getElementsByName("tag")[0].value="";
 };
 
