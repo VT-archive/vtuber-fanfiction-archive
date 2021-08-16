@@ -45,7 +45,15 @@ document.getElementById("search").addEventListener("click", function(){
   if(given != ""){
     active.forEach(value =>{
       let worker = value.tags;
-      let stat =0;
+      let title = value.name;
+      let stat =0;  
+
+      //searches for matching title
+      if(title.toLowerCase().indexOf(given) > -1){ 
+        stat++; 
+      }
+      
+      //searches for matching tags
       worker.forEach(value =>{
         let compare = value.toLowerCase();
         if ( compare.indexOf(given) > -1 ) {
@@ -64,7 +72,7 @@ document.getElementById("search").addEventListener("click", function(){
   };
 });
 
-//handles and redirects enter key actions 
+//catches and redirects enter key actions 
 document.getElementById('tag').addEventListener("keypress",function(event){
   if (event.keyCode === 13){
     if(document.getElementById('tag').value == ''){
@@ -79,4 +87,4 @@ document.getElementById('tag').addEventListener("keypress",function(event){
 document.getElementById("reset").addEventListener("click", function(){
   active = puller;
   write1(active);
-});
+});                                               
