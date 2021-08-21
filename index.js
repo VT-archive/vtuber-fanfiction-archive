@@ -11,7 +11,7 @@ function write1(given){
 
   document.getElementById("listing").innerHTML = writer;
   document.getElementsByName("tag")[0].placeholder= given.length + " entries matching search";
-    document.getElementsByName("tag")[0].value="";
+  document.getElementsByName("tag")[0].value="";
 };
 
 //fetches json file, hands data to var puller, and writes listing to screen 
@@ -72,6 +72,36 @@ document.getElementById("search").addEventListener("click", function(){
   };
 });
 
+//groups button
+document.getElementById("group").addEventListener("click",function(){
+  document.getElementById("group").style.visibility = "hidden"
+  let groups = {}
+  // let names = []
+  puller.forEach(value => {
+    if(value.hasOwnProperty('group')){
+      if(groups.hasOwnProperty(value.group)){
+        let inter = value.group;
+        groups[inter].push(value);
+      }else{
+        let inter = value.group;
+        groups[inter] = [value];
+      }
+    }
+  });
+  
+  let writer = '';
+  for (let p in groups){
+    writer += p.toString()+"<br>";
+    groups[p].forEach(value => {
+    writer += "<a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "<br>";
+    });
+    writer += "<br>"
+  }
+
+  document.getElementById("listing").innerHTML = writer;
+  
+});
+
 //catches and redirects enter key actions 
 document.getElementById('tag').addEventListener("keypress",function(event){
   if (event.keyCode === 13){
@@ -85,6 +115,7 @@ document.getElementById('tag').addEventListener("keypress",function(event){
 
 //resets listing to original
 document.getElementById("reset").addEventListener("click", function(){
+  document.getElementById("group").style.visibility = "visible";
   active = puller;
   write1(active);
 });                                               
