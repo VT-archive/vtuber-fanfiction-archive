@@ -75,9 +75,13 @@ document.getElementById("search").addEventListener("click", function(){
 //groups button
 document.getElementById("group").addEventListener("click",function(){
   document.getElementById("group").style.visibility = "hidden"
+  let t = []
+  for(let i = active.length; i != 0; i--){
+    t.push(active[i-1])
+  };
+
   let groups = {}
-  // let names = []
-  puller.forEach(value => {
+  t.forEach(value => {
     if(value.hasOwnProperty('group')){
       if(groups.hasOwnProperty(value.group)){
         let inter = value.group;
