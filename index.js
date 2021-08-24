@@ -60,7 +60,7 @@ document.getElementById("search").addEventListener("click", function(){
         worker.forEach(value =>{
           let compare = value.toLowerCase();
           if(compare.indexOf('nsfw') > -1){
-            break
+            stat = 0;
           }else if(compare.indexOf(given) > -1 ) {
             stat++;
           } 
