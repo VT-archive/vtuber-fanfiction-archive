@@ -1,5 +1,5 @@
 input[type="text"] {
-    font-size: 20px;
+    font-size:1.5vw;
 }
 
 button{
@@ -7,9 +7,9 @@ button{
     border-color: black; 
     border-width: 1px;
     border-radius: 15px;
-    font-size: 20px;
+    font-size:1.5vw;
 }
 
 p{
-    font-size: 20px;
+    font-size:1.2vw;
 }
