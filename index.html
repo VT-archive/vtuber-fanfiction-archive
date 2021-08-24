@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html5>
-    <style>
-        .button{
-            background-color: gray; 
-            border-color: black; 
-            border-width: 1px;
-            border-radius: 15px;
-        }
-    </style>
-
-    <meta charset="UTF-8">
-    <title>home</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>home</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
 
     <body>
 
@@ -18,11 +12,11 @@
 
         <div style="display: inline;">
             <center>
-            <button id = "flip" class="button">Flip</button>
+            <button id = "flip">Flip</button>
             <input type="text" id="tag" placeholder= "tags" onfocus="this.value=''" size= 30 name="tag">
-            <button id = "search" class="button">Search</button>
-            <button id = "reset" class="button">Reset</button>
-            <button id = "group" class="button">Display Groups</button>
+            <button id = "search">Search</button>
+            <button id = "reset">Reset</button>
+            <button id = "group">Display Groups</button>
             </center>
         </div>
 
@@ -44,11 +38,11 @@
             </blockquote>
 
             <center>
-                <button class= "button" style= "font-size: 15px;" onclick="document.getElementById('hello').style.display = 'none'">Done</button>
+                <button style= "border-width: 2px; border-radius: 10px;" onclick="document.getElementById('hello').style.display = 'none'">Done</button>
             </center>
         </div>
         
-        <p  id = "listing" style="font-size: 20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;"></p>
+        <p  id = "listing" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px;"></p>
 
     </body>
     

@@ -1,0 +1,15 @@
+input[type="text"] {
+    font-size: 20px;
+}
+
+button{
+    background-color: gray; 
+    border-color: black; 
+    border-width: 1px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+p{
+    font-size: 20px;
+}
