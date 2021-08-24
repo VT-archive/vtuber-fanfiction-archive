@@ -46,7 +46,7 @@ document.getElementById("search").addEventListener("click", function(){
     active.forEach(value =>{
       let worker = value.tags;
       let title = value.name;
-      let stat =0;  
+      let stat = 0;  
 
       //searches for matching title
       if(title.toLowerCase().indexOf(given) > -1){ 
@@ -54,15 +54,33 @@ document.getElementById("search").addEventListener("click", function(){
       }
       
       //searches for matching tags
-      worker.forEach(value =>{
-        let compare = value.toLowerCase();
-        if ( compare.indexOf(given) > -1 ) {
-          stat++;
-        } 
-      });
-      if(stat > 0){
-        giver.push(value)
-      };
+      //only concession ill make, makes it easier to filter out nsfw stories when search is 'sfw'
+      
+      if(given == 'sfw'){
+        worker.forEach(value =>{
+          let compare = value.toLowerCase();
+          if(compare.indexOf('nsfw') > -1){
+            break
+          }else if(compare.indexOf(given) > -1 ) {
+            stat++;
+          } 
+        });
+        if(stat > 0){
+          giver.push(value)
+        };
+
+      }else{
+        worker.forEach(value =>{
+          let compare = value.toLowerCase();
+          if ( compare.indexOf(given) > -1 ) {
+            stat++;
+          } 
+        });
+        if(stat > 0){
+          giver.push(value)
+        };
+      }
+
     });
 
     if(giver.length != 0){
@@ -75,6 +93,7 @@ document.getElementById("search").addEventListener("click", function(){
 //groups button
 document.getElementById("group").addEventListener("click",function(){
   document.getElementById("group").style.visibility = "hidden"
+  
   let t = []
   for(let i = active.length; i != 0; i--){
     t.push(active[i-1])
