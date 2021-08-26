@@ -11,5 +11,5 @@ button{
 }
 
 p{
-    font-size: clamp(2rem, -0.875rem + 8.333333vw, 1.25rem);
+    font-size: clamp(2rem, 3rem + 2.0833333vw, 1.25rem);
 }
