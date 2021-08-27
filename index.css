@@ -1,5 +1,5 @@
 input[type="text"] {
-    font-size: 1.2vw;
+    font-size: 25px;
 }
 
 button{
@@ -7,9 +7,9 @@ button{
     border-color: black; 
     border-width: 1px;
     border-radius: 15px;
-    font-size: 1.2;
+    font-size: 25px;
 }
 
 p{
-    font-size: clamp(2rem, 3rem + 2.0833333vw, 1.25rem);
+    font-size: 20px;
 }
