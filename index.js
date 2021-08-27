@@ -52,35 +52,15 @@ document.getElementById("search").addEventListener("click", function(){
       if(title.toLowerCase().indexOf(given) > -1){ 
         stat++; 
       }
-      
-      //searches for matching tags
-      //only concession ill make, makes it easier to filter out nsfw stories when search is 'sfw'
-      
-      if(given == 'sfw'){
-        worker.forEach(value =>{
-          let compare = value.toLowerCase();
-          if(compare.indexOf('nsfw') > -1){
-            stat = 0;
-          }else if(compare.indexOf(given) > -1 ) {
-            stat++;
-          } 
-        });
-        if(stat > 0){
-          giver.push(value)
-        };
 
-      }else{
-        worker.forEach(value =>{
-          let compare = value.toLowerCase();
-          if ( compare.indexOf(given) > -1 ) {
-            stat++;
-          } 
-        });
-        if(stat > 0){
-          giver.push(value)
-        };
-      }
-
+      //tags
+      let compare = worker.toLowerCase();
+      if ( compare.indexOf(given) > -1 ) {
+        stat++;
+      } 
+      if(stat > 0){
+        giver.push(value)
+      };
     });
 
     if(giver.length != 0){
