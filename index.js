@@ -1,12 +1,13 @@
 var puller;
 var active;
+var newentry = "New!";
 
 //writes object array to screen
 function write1(given){
-  let writer = '';
+  let writer = "<h3 style='margin:0'>Entries:</h3>";
 
   given.forEach(value => {
-    writer += "<a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "<br>";
+    writer += "<p style='margin:0'><a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "</p>";
   });
 
   document.getElementById("listing").innerHTML = writer;
@@ -21,6 +22,20 @@ fetch("./library.json")
     function(response) {
       response.json().then((data) => { 
           puller = data;
+
+          //writes new stories to screen
+          let w= "<h3 style='margin:0'>New entries:</h3>";
+          let l = []
+          puller.forEach(value =>{
+            if ( value['tags'].indexOf(newentry) > -1 ) {
+              l.push(value)
+            }
+          });
+          l.forEach(value =>{
+            w += "<p style='margin:0'><a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "</p>";
+          });
+          document.getElementById("new").innerHTML = w;
+
           write1(puller);
           active = puller;
       });
@@ -30,6 +45,7 @@ fetch("./library.json")
 
 //flips order of listing and writes to screen
 document.getElementById("flip").addEventListener("click", function(){
+  document.getElementById("group").style.visibility = "visible";
   let t = []
   for(let i = active.length; i != 0; i--){
     t.push(active[i-1])
@@ -94,9 +110,9 @@ document.getElementById("group").addEventListener("click",function(){
   
   let writer = '';
   for (let p in groups){
-    writer += p.toString()+"<br>";
+    writer += "<h3  style='margin:0'>" + p.toString()+":</h3>";
     groups[p].forEach(value => {
-    writer += "<a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "<br>";
+    writer += "<p style='margin:0'><a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "</p>";
     });
     writer += "<br>"
   }
