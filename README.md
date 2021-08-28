@@ -6,3 +6,5 @@ All stories are stored in the "library.json" file. To add a new one you can simp
  into the top of the document and add your text in the empty spaces.
 
 Opptionally you can use ``{"name":" ","link":" ","tags":" ","group":" "}`` if you wish to associate several entries with each other.
+
+New entries can also be pointed out by adding the tag "New!"
