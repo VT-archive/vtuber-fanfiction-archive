@@ -4,7 +4,7 @@ var newentry = "New!";
 
 //writes object array to screen
 function write1(given){
-  let writer = "<h3 style='margin:0'>Entries:</h3>";
+  let writer = "<h3 style='margin:0'>Stories:</h3>";
 
   given.forEach(value => {
     writer += "<p style='margin:0'><a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "</p>";
