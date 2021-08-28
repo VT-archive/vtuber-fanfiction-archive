@@ -75,8 +75,8 @@ document.getElementById("group").addEventListener("click",function(){
   document.getElementById("group").style.visibility = "hidden"
   
   let t = []
-  for(let i = active.length; i != 0; i--){
-    t.push(active[i-1])
+  for(let i = puller.length; i != 0; i--){
+    t.push(puller[i-1])
   };
 
   let groups = {}
