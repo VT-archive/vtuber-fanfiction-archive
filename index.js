@@ -114,7 +114,6 @@ document.getElementById("group").addEventListener("click",function(){
     groups[p].forEach(value => {
     writer += "<p style='margin:0'><a target = '_blank' href = " + value.link + ">" + value.name + ":</a>" + ' ' + value.tags + "</p>";
     });
-    writer += "<br>"
   }
 
   document.getElementById("listing").innerHTML = writer;
